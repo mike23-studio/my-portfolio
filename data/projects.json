@@ -13,5 +13,19 @@
     "liveUrl": "",
     "repoUrl": "",
     "date": "2026-05-10"
+  },
+  {
+    "id": "moriasi-water-solutions-1782912544619",
+    "title": "Moriasi Water Solutions",
+    "tagline": "Water is life",
+    "description": "This is a site i created for a water supply hub",
+    "tags": [
+      "Wordpress"
+    ],
+    "image": "assets/images/moriasi-water-solutions-1782912536656.jpg",
+    "liveUrl": "https://nakuru6.gpkdigitalmarketing.org/",
+    "repoUrl": "https://nakuru6.gpkdigitalmarketing.org/",
+    "date": "2026-07-01",
+    "order": 2
   }
 ]
