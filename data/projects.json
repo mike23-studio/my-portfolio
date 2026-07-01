@@ -1,20 +1,5 @@
 [
   {
-    "id": "example-two",
-    "order": 1,
-    "title": "Example Project Two",
-    "tagline": "Another short summary goes here.",
-    "description": "Delete these two examples from the admin panel once you've added your own projects.",
-    "tags": [
-      "Python",
-      "Data"
-    ],
-    "image": "",
-    "liveUrl": "",
-    "repoUrl": "",
-    "date": "2026-05-10"
-  },
-  {
     "id": "moriasi-water-solutions-1782912544619",
     "title": "Moriasi Water Solutions",
     "tagline": "Water is life",
@@ -26,6 +11,6 @@
     "liveUrl": "https://nakuru6.gpkdigitalmarketing.org/",
     "repoUrl": "https://nakuru6.gpkdigitalmarketing.org/",
     "date": "2026-07-01",
-    "order": 2
+    "order": 1
   }
 ]
