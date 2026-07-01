@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Admin — Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- LOGIN VIEW -->
+<div class="wrap" id="login-view">
+  <div class="login-panel">
+    <h1>Connect to your repo</h1>
+    <p>
+      Enter a GitHub personal access token scoped to this one repository.
+      It's stored only in this browser (localStorage) — never committed.
+      See the README for how to generate one.
+    </p>
+
+    <div class="field">
+      <label for="f-owner">Repo owner (your GitHub username)</label>
+      <input id="f-owner" type="text" placeholder="e.g. janedoe" />
+    </div>
+    <div class="field">
+      <label for="f-repo">Repository name</label>
+      <input id="f-repo" type="text" placeholder="e.g. my-portfolio" />
+    </div>
+    <div class="field">
+      <label for="f-branch">Branch</label>
+      <input id="f-branch" type="text" placeholder="main" value="main" />
+    </div>
+    <div class="field">
+      <label for="f-token">Personal access token</label>
+      <input id="f-token" type="password" placeholder="github_pat_..." />
+      <p class="field-hint">Fine-grained token, this repo only, "Contents: Read and write" permission.</p>
+    </div>
+
+    <button class="btn btn-primary" id="btn-connect" style="width:100%;justify-content:center;margin-top:0.5rem;">Connect</button>
+    <p class="error-msg" id="login-error" hidden></p>
+  </div>
+</div>
+
+<!-- ADMIN VIEW -->
+<div class="wrap" id="admin-view" hidden>
+  <div class="admin-bar">
+    <div>
+      <strong class="mono" id="repo-label"></strong>
+    </div>
+    <div style="display:flex; align-items:center; gap:0.75rem;">
+      <span class="status-pill" id="status-pill">idle</span>
+      <a class="btn" href="index.html" target="_blank" rel="noopener">view site ↗</a>
+      <button class="btn" id="btn-logout">log out</button>
+    </div>
+  </div>
+
+  <div class="admin-layout">
+    <!-- LEFT: project list / reorder -->
+    <div class="panel">
+      <h2>Projects <span class="log-count" id="project-count"></span></h2>
+      <p class="field-hint" style="margin-bottom:1rem;">Drag to reorder — the order here is the order visitors see on the site.</p>
+      <div id="project-list"></div>
+      <button class="btn btn-primary" id="btn-new" style="margin-top:1rem;width:100%;justify-content:center;">+ add project</button>
+    </div>
+
+    <!-- RIGHT: edit form -->
+    <div class="panel">
+      <h2 id="form-heading">New project</h2>
+      <form id="project-form">
+        <div class="image-preview" id="image-preview">no image selected</div>
+        <div class="field">
+          <label for="f-image-file">Project image</label>
+          <input id="f-image-file" type="file" accept="image/*" />
+          <p class="field-hint">Uploaded to <span class="mono">assets/images/</span> in your repo on save.</p>
+        </div>
+        <div class="field">
+          <label for="f-title">Title</label>
+          <input id="f-title" type="text" required />
+        </div>
+        <div class="field">
+          <label for="f-tagline">Tagline (short, one line)</label>
+          <input id="f-tagline" type="text" maxlength="100" />
+        </div>
+        <div class="field">
+          <label for="f-description">Description</label>
+          <textarea id="f-description"></textarea>
+        </div>
+        <div class="field">
+          <label for="f-tags">Tags (comma separated)</label>
+          <input id="f-tags" type="text" placeholder="React, Node.js, PostgreSQL" />
+        </div>
+        <div class="field">
+          <label for="f-live">Live URL</label>
+          <input id="f-live" type="url" placeholder="https://" />
+        </div>
+        <div class="field">
+          <label for="f-repo-url">Repo URL</label>
+          <input id="f-repo-url" type="url" placeholder="https://github.com/..." />
+        </div>
+        <div class="field">
+          <label for="f-date">Date</label>
+          <input id="f-date" type="date" />
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary" id="btn-save">save project</button>
+          <button type="button" class="btn" id="btn-cancel">clear form</button>
+          <button type="button" class="btn btn-danger" id="btn-delete" hidden>delete</button>
+        </div>
+        <p class="error-msg" id="form-error" hidden></p>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script src="js/admin.js"></script>
+</body>
+</html>
