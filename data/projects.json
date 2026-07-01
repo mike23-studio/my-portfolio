@@ -1,23 +1,14 @@
 [
   {
-    "id": "example-one",
-    "order": 1,
-    "title": "Example Project One",
-    "tagline": "A short one-line summary of what this project does.",
-    "description": "Replace this with the real description of your project: the problem it solves, your role, and any interesting technical decisions you made along the way.",
-    "tags": ["React", "Node.js", "PostgreSQL"],
-    "image": "",
-    "liveUrl": "",
-    "repoUrl": "",
-    "date": "2026-06-01"
-  },
-  {
     "id": "example-two",
-    "order": 2,
+    "order": 1,
     "title": "Example Project Two",
     "tagline": "Another short summary goes here.",
     "description": "Delete these two examples from the admin panel once you've added your own projects.",
-    "tags": ["Python", "Data"],
+    "tags": [
+      "Python",
+      "Data"
+    ],
     "image": "",
     "liveUrl": "",
     "repoUrl": "",
